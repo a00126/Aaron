@@ -31,7 +31,7 @@ jobs:
           destination_branch: "Aaron"
           github_token: ${{ secrets.PAT }}
           
-      - name: Merge main from okyyds
+      - name: Merge main from Aaron
         uses: devmasx/merge-branch@v1.3.1
         if: env.PAT
         with:
