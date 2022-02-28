@@ -75,11 +75,11 @@ if ($.isNode()) {
       await jdPigPet();
     }
   }
-  let res2 = await getAuthorShareCode('https://raw.githubusercontent.com/Aaron-lv/updateTeam/master/shareCodes/pig.json')
+  let res2 = await getAuthorShareCode('')
   if (!res2) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/pig.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+    $.http.get({url: ''}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(2000)
-    res2 = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/pig.json')
+    res2 = await getAuthorShareCode('')
   }
   $.shareCodes = [...new Set([...$.shareCodes, ...(res2 || [])])]
   console.log($.shareCodes)
